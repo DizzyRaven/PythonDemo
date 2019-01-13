@@ -22,6 +22,9 @@
     <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="Human.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Test_Python.py" />
   </ItemGroup>
   <ItemGroup>
