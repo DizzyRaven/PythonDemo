@@ -10,4 +10,4 @@ weather = soup.select(".today-temp")
 print(weather[0].text)
 human = Human(23)
 print(human.age)
-
+#Мдя а у меня не работают в этой среде все библиоткеки.. MrCross
