@@ -1,16 +1,14 @@
-import requests
-from bs4 import BeautifulSoup
-from Human import Human
 
-page = "https://sinoptik.ua/%D0%BF%D0%BE%D0%B3%D0%BE%D0%B4%D0%B0-%D0%BA%D0%B8%D0%B5%D0%B2"
+from PageParser import PageParser
 
-response = requests.get(page)
-print(response.text)
-soup = BeautifulSoup(response.text, 'html.parser')
-weather = soup.select(".today-temp")
-print(weather[0])
-print(weather[0].text)
-human = Human(23)
-print(human.age)
-#Мдя а у меня не работают в этой среде все библиоткеки.. MrCross
-#странно у меня все работает
+url = "https://sinoptik.ua/%D0%BF%D0%BE%D0%B3%D0%BE%D0%B4%D0%B0-%D0%BA%D0%B8%D0%B5%D0%B2"
+tag = ".today-temp"
+
+pageParser = PageParser(url)
+
+weather = pageParser.getTagValue(tag)
+
+print("Weather today is "+weather)
+
+
+
