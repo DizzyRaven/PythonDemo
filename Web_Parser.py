@@ -1,11 +1,22 @@
+import sys
 import requests
 from bs4 import BeautifulSoup
 
-page = "https://sinoptik.ua/%D0%BF%D0%BE%D0%B3%D0%BE%D0%B4%D0%B0-%D0%BA%D0%B8%D0%B5%D0%B2"
-
 class WebParser(object): #Зачем непосредственно необходим "object"
-    def 
-response = requests.get(page)
-soup = BeautifulSoup(response.text, 'html.parser')
-weather = soup.select(".today-temp")
-print(weather[0].text)
+    def __init__(self, url):
+        self.url = url
+    def getsomeinf(self, tag):
+        response = requests.get(self.url)
+        html_text = BeautifulSoup(response.text, 'html.parser')
+        today_temp = html_text.select(tag)
+        print(today_temp)
+        #print(len(today_temp))
+        """for i in range(len(today_temp) - 1):
+            print(today_temp[i].text)"""
+        
+print("Введите искомый адрес:")
+page = sys.stdin.readline()#"https://sinoptik.ua/погода-киев"
+print("Введите искомый тег:")
+tag = sys.stdin.readline()#".today-temp"
+td_wthr = WebParser(page)
+td_wthr.getsomeinf(tag)
