@@ -9,8 +9,7 @@ class WebParser(object): #Зачем непосредственно необхо
         response = requests.get(self.url)
         html_text = BeautifulSoup(response.text, 'html.parser')
         today_temp = html_text.select(tag)
-        print(today_temp)
-        #print(len(today_temp))
+        print(today_temp[0].text)
         """for i in range(len(today_temp) - 1):
             print(today_temp[i].text)"""
         
