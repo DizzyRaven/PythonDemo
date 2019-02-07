@@ -1,5 +1,4 @@
 import string
-from time import time,sleep
 def word_letter_counter(a):
     s = a.rsplit(sep=None, maxsplit=-1)
     w = len(s)
