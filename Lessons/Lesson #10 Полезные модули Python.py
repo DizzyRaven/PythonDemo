@@ -36,11 +36,39 @@ print(keyword.kwlist)"""
 #=====================================================================
 #Генерация случайных чисел с помощью модуля random
 #Использование randint
-import random
+"""import random
 print(random.randint(1, 100))
 print(random.randint(100, 1000))
-print(random.randint(1000, 5000))
+print(random.randint(1000, 5000))"""
 #==============================
+"""import random
+num = random.randint(1, 100)
+while True:
+    guess = input('Угадайте число от 1 до 100: ')
+    i = int(guess)
+    if int(i) == num:
+        print('Правильно')
+        break
+    elif int(i) < num:
+        print('Загаданное число больше')
+    elif int(i) > num:
+        print('Загаданное число меньше')"""
+#=====================================================================
+import random
+desserts = ['Роллы', 'Бургеры', 'Гороховый Суп', 'Пицца', 'Баночка', 'Макарохи']
+print(random.choice(desserts))
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
