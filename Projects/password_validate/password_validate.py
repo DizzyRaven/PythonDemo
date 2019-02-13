@@ -4,19 +4,15 @@ def password_validate(text):
     numb = 0
     symb = 0
     symb_ = '$#@&'
-    le = 8
+    le = len(text)
     for i in text:
-        if i.isalpha() and i.isupper():
+        if i.isupper():
             lett_u += 1
-    for i in text:
-        if i.isalpha() and i.islower():
+        if i.islower():
             lett_l += 1
-    for i in text:
         if i.isdigit():
             numb += 1
-    for i in text:
-        t = i in symb_
-        if t == True:
+        if i in symb_:
             symb += 1
     if lett_l >= 1 and numb >= 1 and lett_u >= 1 and symb >= 1 and le >= 8:
         print(symb, lett_l, lett_u, numb)
