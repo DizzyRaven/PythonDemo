@@ -1,7 +1,6 @@
 def case_counter(a):
     u = 0
     l = 0
-    res = ()
     for i in a:
         if i.isalpha() and i.isupper():
             u += 1
